@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from hostelentryexit import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('hostelentryexit/', views.hostel_list),
+    path('hostelentryexit/<int:id>', views.hostel_detail),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)   
