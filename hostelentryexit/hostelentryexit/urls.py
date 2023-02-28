@@ -25,7 +25,7 @@ urlpatterns = [
     path('database/', views.database_list),
     path('database/<int:id>', views.database_detail),
     path('users/', views.users_list),
-    path('users/<char:roll_no>', views.users_detail)
+    path('users/<roll_no>', views.users_detail)
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)   
