@@ -99,7 +99,7 @@ def users_list(request, format=None):
 @api_view(['GET', 'PUT', 'DELETE'])
 def users_detail(request, roll_no, format=None):
     try:
-        u = users.objects.get(pk=roll_no)
+        u = users.objects.get(roll_no)
     except users.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
