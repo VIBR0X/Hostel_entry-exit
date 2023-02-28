@@ -22,6 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hostelentryexit/', views.hostel_list),
     path('hostelentryexit/<int:id>', views.hostel_detail),
+    path('database/', views.database_list),
+    path('database/<int:id>', views.database_detail),
+    path('users/', views.users_list),
+    path('users/<char:roll_no>', views.users_detail)
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)   
