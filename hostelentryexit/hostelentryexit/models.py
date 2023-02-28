@@ -1,7 +1,7 @@
 from django.db import models
 
 class Hostel (models.Model):
-    h_num = models.CharField(max_length=4)
+    h_num = models.CharField(primary_key=True,max_length=4)
     username = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
 
@@ -19,8 +19,8 @@ class Database (models.Model):
     out_time = models.BooleanField()
 
 class users(models.Model):
-    name=models.CharField(max_length=50)
-    roll_no=models.CharField(max_length=20)
+    name=models.CharField( max_length=50)
+    roll_no=models.CharField(primary_key=True, max_length=20)
     hostel_no=models.IntegerField(max_length=2)
     room_no=models.IntegerField(max_length=3)
     hostelvisited=models.IntegerField(max_length=2)

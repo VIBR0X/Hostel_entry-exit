@@ -6,7 +6,7 @@ from .models import users
 class HostelSerializer(serializers.ModelSerializer):
     class Meta:
             model = Hostel
-            fields = ['id', 'h_num', 'username', 'password']
+            fields = ['h_num', 'username', 'password']
 
 
 class DatabaseSerializer(serializers.ModelSerializer):
@@ -17,6 +17,6 @@ class DatabaseSerializer(serializers.ModelSerializer):
 class usersSerializer(serializers.ModelSerializer):
     class Meta:
             model = users
-            fields = ['id', 'name', 'roll_no', 'hostel_no', 'room_no', 'hostelvisited']
+            fields = ['name', 'roll_no', 'hostel_no', 'room_no', 'hostelvisited']
 
 
