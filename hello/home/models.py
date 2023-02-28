@@ -7,6 +7,7 @@ class users(models.Model):
     hostel_no=models.IntegerField(max_length=2)
     room_no=models.IntegerField(max_length=3)
     hostelvisited=models.IntegerField(max_length=2)
+    image=models.ImageField(upload_to='images',default="")
 
 def __str__(self):
     return self.name
@@ -22,3 +23,6 @@ def __str__(self):
 
 def __str__(self):
     return self.hostelvisited
+
+def __str__(self):
+    return self.image
