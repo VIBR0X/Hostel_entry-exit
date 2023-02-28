@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.utils import timezone 
+from datetime import datetime
 class Hostel (models.Model):
     h_num = models.CharField(max_length=4)
     username = models.CharField(max_length=100)
@@ -14,7 +15,7 @@ class Database (models.Model):
     rollnum_2 = models.CharField(max_length=20)
     name_1 = models.CharField(max_length=100)
     name_2 = models.CharField(max_length=100)
-    in_time = models.BooleanField()
+    in_time = models.DateTimeField(datetime.now())
     out_time = models.BooleanField()
 
 class users(models.Model):
