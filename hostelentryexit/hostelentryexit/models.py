@@ -15,15 +15,14 @@ class Database (models.Model):
     rollnum_2 = models.CharField(max_length=20)
     name_1 = models.CharField(max_length=100)
     name_2 = models.CharField(max_length=100)
-    in_time = models.DateTimeField(datetime.now())
-    out_time = models.BooleanField()
-
+    in_time = models.DateTimeField(auto_now_add=True)
+    out_time = models.BooleanField(default=False)
+    
 class users(models.Model):
     name=models.CharField( max_length=50)
     roll_no=models.CharField(primary_key=True, max_length=20)
     hostel_no=models.IntegerField(max_length=2)
     room_no=models.IntegerField(max_length=3)
-    
     hostel_visited = models.ForeignKey(Hostel, on_delete=models.CASCADE)
 
 
