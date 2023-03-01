@@ -99,20 +99,13 @@ def users_list(request, format=None):
 @api_view(['GET', 'PUT', 'DELETE'])
 def users_detail(request, roll_no, format=None):
     try:
-        u = users.objects.get(roll_no)
+        u = users.objects.get(pk=roll_no)
     except users.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
         u = usersSerializer(u)
         return Response(u.data)
-    
-    elif request.method == 'PUT':
-        serializer = usersSerializer(u, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     
         

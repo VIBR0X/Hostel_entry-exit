@@ -23,8 +23,7 @@ class users(models.Model):
     roll_no=models.CharField(primary_key=True, max_length=20)
     hostel_no=models.IntegerField(max_length=2)
     room_no=models.IntegerField(max_length=3)
-    hostel_visited = models.ForeignKey(Hostel, on_delete=models.CASCADE)
-
+    
 
 def __str__(self):
     return self.name
@@ -38,8 +37,6 @@ def __str__(self):
 def __str__(self):
     return self.room_no
 
-def __str__(self):
-    return self.hostelvisited
 
 
 
