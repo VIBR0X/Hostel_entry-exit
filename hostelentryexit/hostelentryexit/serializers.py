@@ -13,12 +13,12 @@ class HostelSerializer(serializers.ModelSerializer):
 class DatabaseSerializer(serializers.ModelSerializer):
     class Meta:
             model = Database
-            fields = ['rollnum_1', 'rollnum_2', 'name_1', 'name_2', 'in_time', 'out_time']
+            fields = ['rollnum_1', 'rollnum_2', 'name_1', 'name_2', 'h_num', 'in_time', 'out_time']
 
 class tempdataSerializer(serializers.ModelSerializer):
       class Meta:
             model = tempdata
-            fields = ['rollnum_1', 'rollnum_2', 'name_1', 'name_2', 'in_time']
+            fields = ['rollnum_1', 'rollnum_2', 'name_1', 'name_2', 'h_num', 'in_time']
 
 class usersSerializer(serializers.ModelSerializer):
     class Meta:

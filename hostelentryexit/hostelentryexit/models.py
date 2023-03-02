@@ -15,6 +15,7 @@ class Database (models.Model):
     rollnum_2 = models.CharField(max_length=20)
     name_1 = models.CharField(max_length=100)
     name_2 = models.CharField(max_length=100)
+    h_num = models.CharField(max_length=4)
     in_time = models.DateTimeField(max_length=100)
     out_time = models.DateTimeField(auto_now_add=True)
 
@@ -23,6 +24,7 @@ class tempdata (models.Model):
     rollnum_2 = models.CharField(max_length=20)
     name_1 = models.CharField(max_length=100)
     name_2 = models.CharField(max_length=100)
+    h_num = models.CharField(max_length=4)
     in_time = models.DateTimeField(auto_now_add=True)
     
 
