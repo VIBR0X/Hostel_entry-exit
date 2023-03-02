@@ -12,7 +12,8 @@ class HostelSerializer(serializers.ModelSerializer):
 class DatabaseSerializer(serializers.ModelSerializer):
     class Meta:
             model = Database
-            fields = ['id', 'rollnum_1', 'rollnum_2', 'name_1', 'name_2', 'in_time', 'out_time']
+            fields = ['rollnum_1', 'rollnum_2', 'name_1', 'name_2', 'in_time', 'out_time']
+
 
 class usersSerializer(serializers.ModelSerializer):
     class Meta:

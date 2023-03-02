@@ -3,8 +3,8 @@ from django.utils import timezone
 from datetime import datetime
 from django.utils.html import mark_safe
 class Hostel (models.Model):
-    h_num = models.CharField(primary_key=True,max_length=4)
-    username = models.CharField(max_length=100)
+    h_num = models.CharField(max_length=4)
+    username = models.CharField(primary_key=True, max_length=100)
     password = models.CharField(max_length=100)
       
 
@@ -16,9 +16,10 @@ class Database (models.Model):
     rollnum_2 = models.CharField(max_length=20)
     name_1 = models.CharField(max_length=100)
     name_2 = models.CharField(max_length=100)
-    in_time = models.DateTimeField(auto_now_add=True)
-    out_time = models.BooleanField(default=False)
-    
+    in_time = models.DateTimeField(max_length=100)
+    out_time = models.DateTimeField(auto_now_add=True)
+
+         
 class users(models.Model):
     name=models.CharField( max_length=50)
     roll_no=models.CharField(primary_key=True, max_length=20)
