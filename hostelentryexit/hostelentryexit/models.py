@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone 
 from datetime import datetime
+from django.utils.html import mark_safe
 class Hostel (models.Model):
     h_num = models.CharField(primary_key=True,max_length=4)
     username = models.CharField(max_length=100)
@@ -23,19 +24,24 @@ class users(models.Model):
     roll_no=models.CharField(primary_key=True, max_length=20)
     hostel_no=models.IntegerField(max_length=2)
     room_no=models.IntegerField(max_length=3)
+    image = models.ImageField(upload_to='images')
+
+    def image_preview(self):
+        return mark_safe(f'<img src = "{self.image.url}" width = "300"/>')
+
     
 
 def __str__(self):
-    return self.name
+        return self.name
 
 def __str__(self):
-    return self.roll_no
+        return self.roll_no
 
 def __str__(self):
-    return self.hostel_no
+        return self.hostel_no
 
 def __str__(self):
-    return self.room_no
+        return self.room_no
 
 
 

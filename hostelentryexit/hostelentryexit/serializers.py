@@ -17,6 +17,6 @@ class DatabaseSerializer(serializers.ModelSerializer):
 class usersSerializer(serializers.ModelSerializer):
     class Meta:
             model = users
-            fields = ['name', 'roll_no', 'hostel_no', 'room_no']
+            fields = ['name', 'roll_no', 'hostel_no', 'room_no', 'image', 'image_preview']
 
 
