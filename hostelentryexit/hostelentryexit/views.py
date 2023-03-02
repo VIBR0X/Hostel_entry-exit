@@ -24,9 +24,9 @@ def hostel_list(request, format=None):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def hostel_detail(request, id, format=None):
+def hostel_detail(request, username, format=None):
     try:
-        hostel = Hostel.objects.get(pk=id)
+        hostel = Hostel.objects.get(pk=username)
     except Hostel.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -105,14 +105,7 @@ def users_detail(request, roll_no, format=None):
 
     if request.method == 'GET':
         u = usersSerializer(u)
-        return Response(serializer.data)
-    
-    elif request.method == 'PUT':
-        serializer = usersSerializer(u, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(u.data)
     
     
         

@@ -15,17 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hostelentryexit import views
+from . import views
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hostelentryexit/', views.hostel_list),
-    path('hostelentryexit/<int:id>', views.hostel_detail),
+    path('hostels/', views.hostel_list),
+    path('hostels/<str:username>', views.hostel_detail),
     path('database/', views.database_list),
     path('database/<int:id>', views.database_detail),
     path('users/', views.users_list),
-    path('users/<char:roll_no>', views.users_detail)
+    path('users/<str:roll_no>', views.users_detail)
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)   
