@@ -24,9 +24,9 @@ def hostel_list(request, format=None):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def hostel_detail(request, h_num, format=None):
+def hostel_detail(request, username, format=None):
     try:
-        hostel = Hostel.objects.get(pk=h_num)
+        hostel = Hostel.objects.get(pk=username)
     except Hostel.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
