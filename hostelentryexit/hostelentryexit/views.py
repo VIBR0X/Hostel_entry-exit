@@ -119,9 +119,12 @@ def tempdata_list(request, format=None):
 
     if request.method == 'POST':
         serializer = tempdataSerializer(data=request.data)
+        print(serializer)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response('Errrr')
         
 @api_view(['GET', 'DELETE'])
 def tempdata_detail(request, rollnum_1, format=None):

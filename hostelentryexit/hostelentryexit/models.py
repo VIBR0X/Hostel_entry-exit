@@ -27,8 +27,6 @@ class tempdata (models.Model):
     h_num = models.CharField(max_length=4)
     in_time = models.DateTimeField(auto_now_add=True)
     
-
-
          
 class users(models.Model):
     name=models.CharField( max_length=50)
